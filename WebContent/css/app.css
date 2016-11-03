@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1470883110_2167764.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1470883110_2167764.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1470883110_2167764.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1470883110_2167764.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1470883110_2167764.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+body{
+  padding-top: 50px;
+}
+hr{
+  border: 2px solid #ccc;
+}
+.header{
+  border-bottom: 3px solid;
+      background-color: rgba(236, 240, 241, 0.77);
+}
+.content-header{
+  position: relative;
+  padding-top: 83px;
+  background: url('../img/banner1.jpg') no-repeat fixed;
+  height: 400px;
+  color: #fff;
+  z-index: 0
+}
+.content-header:after{
+  background-color:  rgba(0,0,0,0.4);
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.content-header .title{
+  font-size: 15px;
+}
+.content-main{
+  background: url('../img/bg-purchase.png');
+  padding: 20px 10px;
+}
+.row{
+  margin-right: 0px;
+}
+.content-footer{
+  background: #161b1f;
+  padding: 20px 0;
+  color: #fff;
+  font-size: 16px
+}
+.content-footer .info{
+  color: #8D8C8C;
+  font-size: 14px;
+  text-align: center;
+}
+.content-footer a{
+  color: #fff
+}
+article{
+  background: #fff;
+  padding: 10px 20px;;
+  box-shadow:0 1px 2px 0 rgba(50,50,50,.15);
+  margin:15px 0;
+}
+article h5{
+  font-size: 20px;
+}
+article h6{
+  font-size: 12px;
+} 
+article    span{
+  font-size:12px;
+ display: block;
+ text-align: right;
+}
+
+article .title{
+  line-height: 70px;
+  padding-left: 30px;
+  background: #ccc;
+  border-left: 10px solid #EB9D9D
+}
+.article-content{
+  padding: 20px 0;
+}
+article p{
+	text-indent:2em
+}
+article .tab{
+  line-height: 30px;
+  padding-left: 30px;
+  background: #ccc;
+  border-left: 10px solid #EB9D9D
+}
+article .tab span{
+  display: inline-block;
+  margin: 0 10px;
+}
+.slidebar .panel-heading{
+  background: #1abc9c;
+  margin-top: 15px;
+}
+.slidebar .panel-heading a{
+  color: #fff
+}
+.slidebar  .list-group-item{
+  font-size: 14px;
+  line-height: 1.2em
+}
+
+/*works*/
+works{
+  background: #fff;
+  padding: 10px 20px;;
+  box-shadow:0 1px 2px 0 rgba(50,50,50,.15);
+  margin: 0 30px 40px 0;
+}
+.works-img{
+
+}
+.works-img img{
+  width: 100%;
+}
+
+/*article*/
+.content-main.article{
+  padding-top: 83px;
+}
+.article article{
+  padding:20px 40px;
+}
+.iconfont{
+  font-style:normal;;
+  font-family: iconfont;
+  font-size: 40px;
+}
