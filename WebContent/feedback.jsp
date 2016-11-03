@@ -3,111 +3,114 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <link rel="icon" href="image/logo1.jpg" type="image/x-icon">
 <title>城科软件协会--意见反馈</title>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script><!-- 不知道怎么，这个竟然不能删除。。。前面明明引入了文件了，这里还得引入才正常，不然对话框闪退。。 -->
-<script type="text/javascript">
-
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/flat-ui.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+  <![endif]-->
 <style type="text/css">
 * {
 	padding: 0;
 	margin: 0;
 }
 
-#keyword {
-	font-family: "Times New Roman";
-	font-size: 3em;
-	margin-left: 30%;
-}
 
-#word_cdckrjxh {
-	font-family: "微软雅黑";
-	font-size: 1.5em;
-	margin-left: 70%;
-}
-
-.word_head {
-	color: blue;
-	font-family: "Arial Black";
-	font-size: 2em;
-}
-
-.word_main {
-	color: gray;
-	font-family: "黑体";
-	font-size: 1.5em;
-	text-indent: 2em;
-}
-
-.line {
-	width: 800px;
-	margin: 0 auto;
-	border: 1px green solid;
-}
-
-.word_main li {
-	list-style-type: none;
-}
 </style>
 </head>
 <body>
-	<jsp:include page="head.html"></jsp:include>
-	<div id="wrap"
-		style="width: 1024px; min-height: 525px; margin: 0 auto;">
-		<img src="image/feedback.jpg" style="margin-left: 20%;"><br />
-		<br />
-		<table width="530" height="50px" cellspacing="0" border="1"
-			bordercolor="#000000" style="margin-left: 20%;">
-			<tr style="background: gray;">
-				<td>意见反馈</td>
+	<jsp:include page="head.jsp"></jsp:include>
+  <div class="container">
+  <div class="center col-sm-offset-1">
+  <h3>提交你的意见</h3>
+  <hr>
+  </div>
+  <div class="row contact-wrap">
+  <div class="status alert alert-success" style="display: none"></div>
+  <form id="main-contact-form" class="contact-form" name="contact-form" method="get" action="action.php" target="iframe"  >
+  <div class="col-sm-5 col-sm-offset-1">
+  <div class="form-group">
+  <label>姓名 *</label>
+  <input type="text" name="name" class="form-control" required="required">
+  </div>
+  <div class="form-group">
+  <label>邮箱 *</label>
+  <input type="email" name="email" class="form-control" required="required">
+  </div>
+  <div class="form-group">
+  <label>手机号</label>
+  <input type="number" class="form-control">
+  </div>
+  <div class="form-group">
+  <label>学院</label>
+  <input type="text" class="form-control">
+  </div>
+  </div>
+  <div class="col-sm-5">
+  <div class="form-group">
+  <label>专业班级</label>
+  <input type="text" name="subject" class="form-control"  >
+  </div>
+  <div class="form-group">
+  <label>意见 *</label>
+  <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+  <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" required="required"  data-toggle="modal" data-target="#myModal">提交</button>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
 
-			</tr>
-			<form onsubmit="return checkForm()">
-				<tr height=200px width="200px">
+<iframe name="iframe" id="iframe" style="display:none" src="" frameborder="0"></iframe>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">提示</h4>
+        </div>
+        <div class="modal-body">
+          提交成功，非常感谢您的反馈!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/vendor/jquery.min.js" charset="utf-8"></script>
+<script src="js/flat-ui.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+  console.log('12123');
+//  var iframe=$('#iframe');
+  // if (iframe.attachEvent) {
+  //   iframe.attachEvent("onload", function() {
+  //     console.log('success');
+  //       console.log($('#iframe .message').html());
+  //   });
+  // } else {
+  //   iframe.onload = function() {
+  //     console.log('success');
+  //       console.log($('#iframe .message').html());
+  //   };
+  // }
+})
 
-					<td><br /> &nbsp;&nbsp;QQ号:<input
-						style="width: 200px; height: 30px;"text"><br /> <br />
-						手机号:<input style="width: 200px; height: 30px;"text"><br />
-						<br /> <textarea rows="5" cols="75" placeholder="请输入您的建议与意见"></textarea><br />&nbsp;&nbsp;&nbsp;&nbsp;
-						<button type="button" data-toggle="modal" data-target="#myModal" 
-							class="btn btn-primary" >提交</button>&nbsp;&nbsp;
-						<button type="reset" class="btn btn-success">重置</button></td>
-						<button type="submit" style="display:none;" id="hiddenSubmit">隐藏域按钮</button>
-				</tr>
-
-			</form>
-		</table>
-
-	</div>
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">反馈成功</h4>
-				</div>
-				<div class="modal-body">感谢您的反馈与建议!<br/>有了您的这些建议与意见，我相信软件协会会越来越好!</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<jsp:include page="footer.html"></jsp:include>
+</script>
+	<jsp:include page="footer.jsp"></jsp:include>
+		<script src="js/vendor/jquery.min.js" charset="utf-8"></script>
+	<script src="js/flat-ui.min.js" charset="utf-8"></script>
+	<script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>

@@ -40,7 +40,7 @@
 body {
 	padding-top: 200px;
 	padding-bottom: 40px;
-	background-image: url('image/star.gif');
+	background-image: url('image/bg.jpg');
 }
 
 .form-signin-heading {

@@ -14,7 +14,7 @@ public class LoginDao
 	public User login(Connection con,User user)throws Exception
 	{
 		User resultUser=null;
-		String sql="select *from T_user where stuId=? and password=?";
+		String sql="select *from t_user where stuId=? and password=?";
 		PreparedStatement pstmt=con.prepareStatement(sql);
 		pstmt.setString(1,user.getStuId());
 		pstmt.setString(2, user.getPassword());

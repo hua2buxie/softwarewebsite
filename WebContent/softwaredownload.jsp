@@ -3,38 +3,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="icon" href="image/logo1.jpg" type="image/x-icon">
 <title>城科软件协会--软件下载</title>
-<script type="text/javascript" src="js/myfocus-2.0.1.min.js"
-	charset="utf-8"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/flat-ui.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+  <![endif]-->
 <style type="text/css">
 * {
 	padding: 0;
 	margin: 0;
 }
-.line{width:800px;margin:0 auto;border:1px green solid;}
-.softwaredesc{font-size: 1.5em;font-family: "黑体";text-indent: 2em;}
-ul li{list-style-type:none;}
-#softwareList{min-height:500px;border:1px gray solid;}
-#wrap{width:1024px;margin:0 auto;}
-#copyrightword{text-indent: 2em;font-size:1.5em;font-family: "黑体"}
-</style>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="http://cdn.bootcss.com
-	
-	/bootstrap/3.3.5/css/bootstrap.min.css">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+</style>
 </head>
 <body>
-	<jsp:include page="head.html"></jsp:include>
-	<div id="wrap">
+	<jsp:include page="head.jsp"></jsp:include>
+	<div class="content-main container-full clearfix">
+	<article class=" col-md-8 col-md-offset-2 ">
 		<p id="copyrightword"><font color="red" size="24px">说明:</font>本站所有软件来源于网络，由本站收集整理，不得用于任何商业用途。如有侵犯你版权的，请联系我们，本站将立即处理。您使用了本站软件后出现的一切情况与本站无关!但可联系软件协会的同学帮忙维修!（软件协会联系方式请看“关于我们”页面）</p>
 		<div id="softwareList">
 		<ul><h3>Microsoft Office各版本</h3><img width=280px height=190px src="image/office.png" style="float:left"><p class="softwaredesc">Microsoft Office是微软公司开发的一套基于 Windows 操作系统的办公软件套装。常用组件有 Word、Excel、Powerpoint等。最新版本为Office 365(Office 16)。<br/><br/></p>
@@ -87,7 +80,10 @@ ul li{list-style-type:none;}
 		<div class="line"></div><br/>
 		
 	</div>
-	</div>
-	<jsp:include page="footer.html"></jsp:include>
+	</article></div>
+	<jsp:include page="footer.jsp"></jsp:include>
+			<script src="js/vendor/jquery.min.js" charset="utf-8"></script>
+	<script src="js/flat-ui.min.js" charset="utf-8"></script>
+	<script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>

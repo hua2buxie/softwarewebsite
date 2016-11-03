@@ -15,13 +15,13 @@ public class NewsDao
 	public List<News> newsList(Connection con) throws Exception
 	{
 		List<News> newsList=new ArrayList<News>();
-		String sql="select * from t_news";
+		String sql="select * from t_news order by id desc";
 		try
 		{
 			PreparedStatement pstmt=con.prepareStatement(sql);
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next())
-			{
+			{ 
 				News news=new News();
 				news.setId(rs.getInt("id"));
 				news.setTitle(rs.getString("title"));
@@ -30,12 +30,6 @@ public class NewsDao
 				System.out.println("啊发布时间:"+news.getreleaseDate());
 				newsList.add(news);
 			}
-		/*	System.out.println("取到的数据如下:");
-			for (News i : newsList)
-			{
-				System.out.println(i);
-			}
-			*/
 			
 		} catch (SQLException e)
 		{
@@ -44,7 +38,34 @@ public class NewsDao
 		
 		return newsList;
 	}
-	
+	public List<News> getHotNews(Connection con) throws Exception
+	{
+		List<News> newsList=new ArrayList<News>();
+		String sql="select * from t_news order by id desc";
+		try
+		{
+			int i=0;
+			PreparedStatement pstmt=con.prepareStatement(sql);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()&&i<3)
+			{
+				i++;
+				News news=new News();
+				news.setId(rs.getInt("id"));
+				news.setTitle(rs.getString("title"));
+				news.setContent(rs.getString("content"));
+				news.setreleaseDate(DateUtil.formatString(rs.getString("releaseDate"),"yyyy-MM-dd HH:mm:ss"));
+				System.out.println("啊发布时间:"+news.getreleaseDate());
+				newsList.add(news);
+			}
+			
+		} catch (SQLException e)
+		{
+			System.out.println("查询失败！");
+		}
+		
+		return newsList;
+	}
 	public static void main(String[] args) throws Exception
 	{
 		DbUtil dbUtil=new DbUtil();

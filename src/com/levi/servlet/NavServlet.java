@@ -42,6 +42,9 @@ public class NavServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action=request.getParameter("action");
+		DbUtil dbUtil=new DbUtil();
+		NewsDao d=new NewsDao();
+		Connection con = null;
 		switch(action)
 		{
 		case "aboutus":
@@ -50,8 +53,29 @@ public class NavServlet extends HttpServlet {
 			break;
 		case "index":
 			System.out.println("首页");
-			response.sendRedirect("index.jsp");
-			//request.getRequestDispatcher("index.jsp").forward(request, response);
+			try
+			{
+				con=dbUtil.getCon();
+				List newsList=d.getHotNews(con);
+				HttpSession session=request.getSession();
+				session.setAttribute("hotNewsList", newsList);
+			} catch (Exception e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try
+			{
+				con.close();
+				System.out.println("数据库连接关闭成功");
+			} catch (SQLException e)
+			{
+				System.out.println("数据库关闭连接失败");
+			}
+			
+			
+			//response.sendRedirect("index.jsp");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			break;
 		case "softwaredownload":
 			System.out.println("软件下载");
@@ -62,9 +86,7 @@ public class NavServlet extends HttpServlet {
 			response.sendRedirect("feedback.jsp");break;
 		case "newslist":
 			System.out.println("新闻列表页");
-			DbUtil dbUtil=new DbUtil();
-			NewsDao d=new NewsDao();
-			Connection con = null;
+			
 			try
 			{
 				con=dbUtil.getCon();
