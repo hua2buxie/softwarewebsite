@@ -29,12 +29,13 @@
 	<jsp:include page="head.jsp"></jsp:include>
   <div class="container">
   <div class="center col-sm-offset-1">
+  <a href="mailto:1012234043@qq.com">给我发邮件</a>
   <h3>提交你的意见</h3>
   <hr>
   </div>
   <div class="row contact-wrap">
   <div class="status alert alert-success" style="display: none"></div>
-  <form id="main-contact-form" class="contact-form" name="contact-form" method="get" action="Mail" target="iframe"  >
+  <form id="main-contact-form" class="contact-form" name="contact-form" method="get" action="action.php" target="iframe"  >
   <div class="col-sm-5 col-sm-offset-1">
   <div class="form-group">
   <label>姓名 *</label>
@@ -46,11 +47,11 @@
   </div>
   <div class="form-group">
   <label>手机号</label>
-  <input type="number" name="phoneNum" class="form-control">
+  <input type="number" class="form-control">
   </div>
   <div class="form-group">
   <label>学院</label>
-  <input type="text" name="xueyuan" class="form-control">
+  <input type="text" class="form-control">
   </div>
   </div>
   <div class="col-sm-5">
@@ -60,7 +61,7 @@
   </div>
   <div class="form-group">
   <label>意见 *</label>
-  <textarea name="yijian" id="yijian" required="required" class="form-control" rows="8"></textarea>
+  <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
   </div>
   <div class="form-group">
   <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" required="required"  data-toggle="modal" data-target="#myModal">提交</button>
@@ -90,6 +91,9 @@
   </div>
 <script src="js/vendor/jquery.min.js" charset="utf-8"></script>
 <script src="js/flat-ui.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+</script>
 	<jsp:include page="footer.jsp"></jsp:include>
 		<script src="js/vendor/jquery.min.js" charset="utf-8"></script>
 	<script src="js/flat-ui.min.js" charset="utf-8"></script>

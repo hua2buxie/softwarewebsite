@@ -49,6 +49,18 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Mail</display-name>
+    <servlet-name>Mail</servlet-name>
+    <servlet-class>com.levi.servlet.MailTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mail</servlet-name>
+    <url-pattern>/Mail</url-pattern>
+  </servlet-mapping>
+  
 
 	<listener>
     <listener-class>
